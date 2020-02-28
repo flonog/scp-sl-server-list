@@ -76,10 +76,10 @@ serverList.searchServer("Official", {limit : 2}).then((res) => {
 |static getServerList()|Nothing|Promise\<Array\<Server>>|Return all the server list|
 |static searchServer(filter, options?)|string filter : The search string \ SearchOptions options : The options of the search |Promise\<Array\<Server>>|Search a server by name / by info|
 |static getServerByIp(ip, port)|string ip : The IP of the server \| number port : The port of the server|Promise\<Server>|Get a server by its IP address and port|
-|getServerById(id)|number id : The serverId of the server|Promise\<Server>|Get a server by its server ID|
+|static getServerById(id)|number id : The serverId of the server|Promise\<Server>|Get a server by its server ID|
 |static getServersByAccountId(id)|number id : The accountId of the servers|Promise\<Array\<Server>>|Get servers by their account ID|
 |static getServersByIsoCode(isoCode)|string isoCode : The isoCode of the servers|Promise\<Array\<Server>>|Get servers by their ISO code|
-|gstatic etServersByContinentCode(continentCode)|string continentCode : The continentCode of the servers|Promise\<Array\<Server>>|Get servers by their Continent code|
+|static getServersByContinentCode(continentCode)|string continentCode : The continentCode of the servers|Promise\<Array\<Server>>|Get servers by their Continent code|
 
 ### SearchOptions Object
 
