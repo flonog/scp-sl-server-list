@@ -27,7 +27,7 @@ class Server {
     }
 
     getPlayerNumber() {
-        return players.split("/")[0]
+        return Number.parseInt(players.split("/")[0])
     }
 }
 
