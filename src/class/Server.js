@@ -23,11 +23,11 @@ class Server {
     }
 
     getPastebinLink() {
-        return `https://pastebin.net/${pastebin}`
+        return `https://pastebin.net/${this.pastebin}`
     }
 
     getPlayerNumber() {
-        return Number.parseInt(players.split("/")[0])
+        return Number.parseInt(this.players.split("/")[0])
     }
 }
 
