@@ -1,4 +1,12 @@
+/**
+ * Represent a server object
+ */
+
 class Server {
+    /**
+     * Create the server
+     * @param {Object} serverData - The serverData of Northwood Studio
+     */
     constructor(serverData) {
         this.serverId = serverData.serverId;
         this.accountId = serverData.accountId;
@@ -22,9 +30,19 @@ class Server {
         this.displaySection = serverData.displaySection;
     }
 
+    /**
+     * Get the pastebin link of the server
+     * @return {string} - Pastebin URL
+     */
+
     getPastebinLink() {
         return `https://pastebin.net/${this.pastebin}`
     }
+
+    /**
+     * Get the player number of the server
+     * @return {Number} - The player numbers
+     */
 
     getPlayerNumber() {
         return Number.parseInt(this.players.split("/")[0])

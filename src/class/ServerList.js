@@ -1,7 +1,15 @@
 const axios = require('axios')
 const Server = require('./Server')
 
+/**
+ * The ServerList object
+ */
 class ServerList {
+
+    /**
+     * Get the entire Server List
+     * @return {Promise<Array<Server>>}
+     */
     
     static getServerList(){
         return new Promise((resolve, reject) => {
@@ -20,6 +28,13 @@ class ServerList {
             })
         })
     }
+
+    /**
+     * Search servers by their name
+     * @param {String} name - The name of the server
+     * @param {Object} [options] - The options of the server
+     * @return {Promise<Array<Server>>}
+     */
 
     static searchServer(name, options) {
         return new Promise((resolve, reject) =>  {
@@ -49,7 +64,15 @@ class ServerList {
         })
     }
 
-    static getServerByIp(ip, port){
+    /**
+     * Search a server by its IP and Port
+     * @param {String} ip - The IP address of the server
+     * @param {Number} [port=7777] - The options of the server
+     * @return {Promise<Server>}
+     */
+
+
+    static getServerByIp(ip, port = 7777){
         return new Promise((resolve, reject) => {            
             this.getServerList().then((serverlist) => {
                 for(var i in serverlist){
@@ -64,6 +87,12 @@ class ServerList {
             });
         })
     }
+
+    /**
+     * Search a server by its ID
+     * @param {Number} id - The ID of the server
+     * @return {Promise<Server>}
+     */
 
     static getServerById(id) {
         return new Promise((resolve, reject) => {            
@@ -81,6 +110,12 @@ class ServerList {
         })
     }
 
+    /**
+     * Get servers by their account ID
+     * @param {Number} id - The account ID of the servers
+     * @return {Promise<Array<Server>>}
+     */
+
     static getServersByAccountId(id) {
         return new Promise((resolve, reject) => {            
             this.getServerList().then((serverlist) => {
@@ -97,6 +132,12 @@ class ServerList {
         })
     }
 
+    /**
+     * Get servers by their ISO Code
+     * @param {String} isoCode - The ISO Code of the servers
+     * @return {Promise<Array<Server>>}
+     */
+
     static getServersByIsoCode(isoCode) {
         return new Promise((resolve, reject) => {            
             this.getServerList().then((serverlist) => {
@@ -112,6 +153,12 @@ class ServerList {
             });
         })
     }
+
+    /**
+     * Get servers by their Continent Code
+     * @param {String} continentCode - The Continent Code of the servers
+     * @return {Promise<Array<Server>>}
+     */
 
     static getServersByContinentCode(continentCode) {
         return new Promise((resolve, reject) => {            
